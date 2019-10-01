@@ -41,18 +41,36 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+// NAV
 const nav = document.querySelectorAll("nav a");
-nav[0].textContent = siteContent["nav"]["nav-item-1"]
-nav[1].textContent = siteContent["nav"]["nav-item-2"]
-nav[2].textContent = siteContent["nav"]["nav-item-3"]
-nav[3].textContent = siteContent["nav"]["nav-item-4"]
-nav[4].textContent = siteContent["nav"]["nav-item-5"]
-nav[5].textContent = siteContent["nav"]["nav-item-6"]
-
+// nav[0].textContent = siteContent["nav"]["nav-item-1"]
+// nav[1].textContent = siteContent["nav"]["nav-item-2"]
+// nav[2].textContent = siteContent["nav"]["nav-item-3"]
+// nav[3].textContent = siteContent["nav"]["nav-item-4"]
+// nav[4].textContent = siteContent["nav"]["nav-item-5"]
+// nav[5].textContent = siteContent["nav"]["nav-item-6"]
+navObj = 1;
 nav.forEach(element => {
-  element.setAttribute('a', siteContent["nav"]);
+  element.textContent = siteContent.nav[`nav-item-${navObj}`];
+  element.style.color = "green";
+  navObj += 1;
 })
 
+//NEW NAV ITEMS
+const newNav1 = document.createElement('a');
+newNav1.textContent = "Home";
+newNav1.style.color = "green";
+
+const newNav2 = document.createElement('a');
+newNav2.textContent = "Manipulate";
+newNav2.style.color = "green";
+
+const naver = document.querySelector('nav')
+naver.prepend(newNav1);
+naver.appendChild(newNav2);
+
+
+// CALL TO ACTION
 const callText = document.querySelector(".cta-text h1");
 callText.textContent = siteContent["cta"]["h1"]
 const callButton = document.querySelector(".cta-text button");
@@ -60,16 +78,19 @@ callButton.textContent = siteContent["cta"]["button"]
 const callImg = document.querySelector("#cta-img");
 callImg.src = siteContent["cta"]["img-src"]
 
+// FEATURES
 const firstContentTitle = document.querySelector(".top-content :nth-child(1) h4");
 firstContentTitle.textContent = siteContent["main-content"]["features-h4"]
 const firstContentP = document.querySelector(".top-content :nth-child(1) p");
 firstContentP.textContent = siteContent['main-content']['features-content']
 
+// ABOUT
 const secondContentTitle = document.querySelector(".top-content :nth-child(2) h4");
 secondContentTitle.textContent = siteContent['main-content']['about-h4']
 const secondContentP = document.querySelector(".top-content :nth-child(2) p");
 secondContentP.textContent = siteContent['main-content']['about-content']
 
+// BANNER IMG
 const midBanner = document.querySelector("#middle-img");
 midBanner.src = siteContent['main-content']["middle-img-src"]
 
@@ -99,3 +120,7 @@ const contactInfo = document.querySelectorAll(".contact p");
 contactInfo[0].textContent = siteContent['contact']["address"]
 contactInfo[1].textContent = siteContent['contact']["phone"]
 contactInfo[2].textContent = siteContent['contact']["email"]
+
+// FOOTER
+const footer = document.querySelector("footer p");
+footer.textContent = siteContent.footer.copyright;
