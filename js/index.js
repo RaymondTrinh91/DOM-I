@@ -94,7 +94,7 @@ secondContentP.textContent = siteContent['main-content']['about-content']
 const midBanner = document.querySelector("#middle-img");
 midBanner.src = siteContent['main-content']["middle-img-src"]
 
-
+//SERVICES
 const thirdContentTitle = document.querySelector(".bottom-content :first-child h4");
 thirdContentTitle.textContent = siteContent['main-content']["services-h4"]
 const thirdContentP = document.querySelector(".bottom-content :first-child p");
